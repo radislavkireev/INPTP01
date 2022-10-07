@@ -18,11 +18,8 @@ jobs:
           java-version: 1.11
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-          
-      - name: Setup MSBuild Path
-        uses: warrenbuckley/Setup-MSBuild@v1
-       
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis          
+   
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.2
      
