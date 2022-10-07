@@ -29,6 +29,11 @@ jobs:
         run: nuget restore INPTP_AppForFixing.sln
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
  
       - name: Build and Publish Web App
         run: msbuild INPTP_AppForFixing.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
